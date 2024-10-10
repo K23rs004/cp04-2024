@@ -17,7 +17,7 @@
     }
 
     #remain {
-        color: #ff0000;
+        color: #ffffff;
         font-size: 20px;
         text-align: center;
         position:absolute; top:310px; 
@@ -26,7 +26,7 @@
     }
     
     #time {
-        color: #ff0000;
+        color: yellow;
         font-size: 20px;
         text-align: center;
         position:absolute; top:340px; 
@@ -58,7 +58,7 @@
     }
 
     #btnC {
-        font-size: 10px;
+        font-size: 30px;
         position:absolute; top:380px; left:70%; width:28%; height:60px; 
     }
    
