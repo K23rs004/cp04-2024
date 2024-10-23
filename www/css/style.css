@@ -61,6 +61,12 @@
         font-size: 30px;
         position:absolute; top:380px; left:70%; width:28%; height:60px; 
     }
+
+     #btnD {
+        font-size: 30px;
+        position:absolute; top:450px; left:70%; width:28%; height:60px;         
+    }
+
    
     #minute {
         font-size: 30px;
@@ -69,7 +75,7 @@
     
     #second {
         font-size: 30px;
-        position:absolute; top:450px; left:190px; width:80px; height:40px;   
+        position:absolute; top:450px; left:170px; width:80px; height:40px;   
     }
     
     input[type=number] {text-align: right;}
