@@ -40,7 +40,7 @@
         });
 
          $('#btnD').click(function(e) {
-            btnCClick(e);
+            btnDClick(e);
         });
         init();
     });
@@ -173,13 +173,8 @@
     function alarm(){
         var canvas = $("#mycanvas")[0];
         var ctx = canvas.getContext("2d");
-        var img = new Image();
-        img.src = "ksuisbg.gif";
-        img.onload = function(){
-            ctx.drawImage(img,0 ,0 , 300 , 300);
-        };
-
         var audio = new Audio();
+         
         audio.src = "pin.wav";
         audio.play();   
     }
@@ -204,10 +199,18 @@
         alarm();
 
 
+        var canvas = $("#mycanvas")[0];
+        var ctx = canvas.getContext("2d");
+        var img = new Image();
+        img.src = "food_cup_ramen_miso.png";
+        img.onload = function(){
+            ctx.drawImage(img,0 ,0 , 450 , 400);
+        };
+
         active = false;
-        period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
+        period = 180;
         $("#time").html("経過時間： 0");
-        $("#remain").html("残り時間： " + period);
+        $("#remain").html("残り時間： " + period+"秒");
         
         
     }
@@ -216,20 +219,22 @@
     function btnDClick(e){
         alarm();
 
+        var canvas = $("#mycanvas")[0];
+        var ctx = canvas.getContext("2d");
+        var img1 = new Image();
+        img1.src = "food_cup_udon.png";
+        img1.onload = function(){
+            ctx.drawImage(img1,0 ,0 , 400 , 400);
+        };
+
         active = false;
-        period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
+        period = 300;
         $("#time").html("経過時間： 0");
-        $("#remain").html("残り時間： " + period);
+        $("#remain").html("残り時間： " + period+"秒");
     }
  
     // 繰り返し実行する処理
     function timer(){ 
-        if(ButtonCClick(e)){
-            var img = new Image();
-        img.src = "food_cup_ramen_miso.png";
-        img.onload = function(){
-            ctx.drawImage(img,0 ,0 , 300 , 300);
-    }
         if(active){
             etime = parseInt((new Date()-startTime)/1000);
             rest = period - etime;
@@ -247,8 +252,8 @@
   </script>
 </head>
 <body>
-    <canvas id="mycanvas" width="200" height="200">Test</canvas>
-
+    <canvas id="mycanvas" width="400" height="400">Test</canvas>
+    <canvas id="mycanvas1" width="400" height="400">Test</canvas>
     <div id="minuteStr">〇</div>
     <div id="secondStr">〇</div>
 
@@ -256,8 +261,8 @@
     <div id="time">Time</div>
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
-    <button id="btnC">Set1</button>  
-    <button id="btnD">Set2</button>  
+    <button id="btnC">Ramen</button>  
+    <button id="btnD">Udon</button>  
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=0 >
 </body>
